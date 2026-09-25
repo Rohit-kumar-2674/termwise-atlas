@@ -1,0 +1,43 @@
+name: Outdated instructions
+description: A primary source or tool behavior changed.
+title: '[outdated] '
+body:
+- type: markdown
+  attributes:
+    value: Do not include API keys, auth files, personal information, or unredacted
+      logs. Security reports follow SECURITY.md.
+- type: input
+  id: guide
+  attributes:
+    label: Guide URL or proposed tool/provider
+    placeholder: Link to the affected guide or upstream documentation
+  validations:
+    required: true
+- type: textarea
+  id: problem
+  attributes:
+    label: Expected and actual behavior
+    description: Describe the smallest reproducible example, or the concrete benefit
+      of the request.
+  validations:
+    required: true
+- type: input
+  id: environment
+  attributes:
+    label: OS, architecture, shell, and tool/runtime versions
+    description: For Android, say native Termux, PRoot Debian/Ubuntu, browser, or
+      SSH.
+- type: textarea
+  id: sources
+  attributes:
+    label: Primary sources and redacted checks
+    description: Sources are required for changes to prices, free tiers, auth, platform
+      support, and integrations.
+- type: checkboxes
+  id: privacy
+  attributes:
+    label: Privacy check
+    options:
+    - label: I removed credentials, auth headers, personal information, and private
+        content.
+      required: true

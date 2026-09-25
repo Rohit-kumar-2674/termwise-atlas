@@ -1,0 +1,17 @@
+{
+  "name": "termwise-atlas",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Validation tooling for the Termwise Atlas documentation site",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "test": "node --test tests/routes.test.cjs",
+    "test:browser": "playwright test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.58.2"
+  }
+}

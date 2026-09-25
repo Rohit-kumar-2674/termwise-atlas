@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "platforms": [
+    "windows",
+    "linux",
+    "macos",
+    "android",
+    "chromeos",
+    "cloud"
+  ],
+  "goals": [
+    "local",
+    "cloud",
+    "free",
+    "multi"
+  ],
+  "ram_choices": [
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "routes": [
+    {
+      "id": "android-local",
+      "when": {
+        "platform": [
+          "android"
+        ],
+        "goal": [
+          "local"
+        ]
+      },
+      "title": "Use a supported remote machine, or treat on-device inference as experimental",
+      "summary": "Official Android Ollama support is not established. Learn Termux first; run a local model on your own supported computer over SSH if available.",
+      "guide": "platforms/android.md",
+      "next": "platforms/remote-ssh.md",
+      "cost": "Local hardware or remote-host costs; no promised on-phone route."
+    },
+    {
+      "id": "android-cloud",
+      "when": {
+        "platform": [
+          "android"
+        ]
+      },
+      "title": "Start on Android with a browser terminal or SSH",
+      "summary": "Use Termux for Git and SSH, or a browser environment for supported Linux tools. Native agent binaries need individual compatibility checks.",
+      "guide": "platforms/android.md",
+      "next": "platforms/codespaces.md",
+      "cost": "Cloud compute and provider inference have separate quotas/costs."
+    },
+    {
+      "id": "remote-local",
+      "when": {
+        "platform": [
+          "cloud"
+        ],
+        "goal": [
+          "local"
+        ]
+      },
+      "title": "Local to the cloud host is still remote from your device",
+      "summary": "Check the host memory and policy. For private on-device inference, use your own supported computer instead of a hosted terminal.",
+      "guide": "providers/ollama.md",
+      "next": "platforms/remote-ssh.md",
+      "cost": "Cloud-host compute/storage may be billed even without a model API."
+    },
+    {
+      "id": "local-small",
+      "when": {
+        "goal": [
+          "local"
+        ],
+        "ram_max": 8
+      },
+      "title": "Try a small local model for focused learning",
+      "summary": "Begin with a tiny explanation task and short context. Low memory is a serious constraint; do not expect autonomous repository editing.",
+      "guide": "providers/hardware.md",
+      "next": "examples/local-ollama.md",
+      "cost": "No local inference API fee; hardware, download, and electricity costs remain."
+    },
+    {
+      "id": "local",
+      "when": {
+        "goal": [
+          "local"
+        ]
+      },
+      "title": "Ollama + a compatible coding client",
+      "summary": "Start with Aider and one model that fits your available memory. Use a tool-capable model for autonomous agents and review every edit.",
+      "guide": "providers/ollama.md",
+      "next": "providers/local-models.md",
+      "cost": "Local inference uses your hardware; choose explicit local tags."
+    },
+    {
+      "id": "free",
+      "when": {
+        "goal": [
+          "free"
+        ]
+      },
+      "title": "Check current legitimate cloud allowances",
+      "summary": "Review Antigravity account eligibility and OpenRouter free-model availability. Neither is unlimited or a guaranteed entitlement.",
+      "guide": "getting-started/costs.md",
+      "next": "tools/antigravity.md",
+      "cost": "Free-tier limits apply; inspect paid fallback and compute costs."
+    },
+    {
+      "id": "multi",
+      "when": {
+        "goal": [
+          "multi"
+        ]
+      },
+      "title": "OpenRouter + Aider or OpenCode",
+      "summary": "Choose an exact model ID, inspect its price and privacy policy, and load your own key securely.",
+      "guide": "providers/openrouter.md",
+      "next": "examples/openrouter-agent.md",
+      "cost": "Model-specific free or metered API usage."
+    },
+    {
+      "id": "cloud",
+      "when": {},
+      "title": "Choose a documented cloud provider and one agent",
+      "summary": "Use an eligible official account or your own API key. Make a small read-only request before granting edits or shell actions.",
+      "guide": "getting-started/comparison.md",
+      "next": "security/api-keys.md",
+      "cost": "Account allowance or paid API; open-source software is a separate property."
+    }
+  ]
+}

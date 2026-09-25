@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-09-22",
+  "note": "Memory is estimated total system planning headroom for modest context, not measured minimums. Download size is not runtime memory.",
+  "models": [
+    {
+      "tag": "qwen2.5-coder:1.5b",
+      "parameters": "1.54B",
+      "quantization": "Q4_K_M",
+      "download": "986 MB",
+      "ram_estimate": "4\u20136 GB",
+      "context": "32K family claim; inspect installed runtime limit",
+      "use": "Short explanation / tiny edit",
+      "provider": "Ollama local",
+      "license": "See exact model license",
+      "source": "https://ollama.com/library/qwen2.5-coder:1.5b",
+      "last_verified": "2026-09-22"
+    },
+    {
+      "tag": "qwen2.5-coder:7b",
+      "parameters": "7.62B",
+      "quantization": "Q4_K_M",
+      "download": "4.7 GB",
+      "ram_estimate": "8\u201312 GB",
+      "context": "32K family claim; long context needs extra memory",
+      "use": "Focused text-editing tasks",
+      "provider": "Ollama local",
+      "license": "See exact model license",
+      "source": "https://ollama.com/library/qwen2.5-coder:7b",
+      "last_verified": "2026-09-22"
+    },
+    {
+      "tag": "qwen2.5-coder:14b",
+      "parameters": "14.8B",
+      "quantization": "Q4_K_M",
+      "download": "9.0 GB",
+      "ram_estimate": "16\u201324 GB",
+      "context": "32K family claim; check configuration",
+      "use": "Larger reviewed edits",
+      "provider": "Ollama local",
+      "license": "See exact model license",
+      "source": "https://ollama.com/library/qwen2.5-coder:14b",
+      "last_verified": "2026-09-22"
+    },
+    {
+      "tag": "qwen3-coder:30b",
+      "parameters": "30.5B total (MoE)",
+      "quantization": "Q4_K_M",
+      "download": "19 GB",
+      "ram_estimate": "32\u201348+ GB",
+      "context": "256K advertised; not a fit guarantee or default recommendation",
+      "use": "Agent-oriented tool use on suitable hardware",
+      "provider": "Ollama local",
+      "license": "See exact model license",
+      "source": "https://ollama.com/library/qwen3-coder:30b",
+      "last_verified": "2026-09-22"
+    }
+  ]
+}

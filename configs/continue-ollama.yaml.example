@@ -1,0 +1,10 @@
+name: Termwise local learning
+version: 1.0.0
+schema: v1
+models:
+  - name: Local coding model
+    provider: ollama
+    model: qwen2.5-coder:7b
+    roles: [chat, edit]
+# This is a modest text-editing example, not an agent tool-use guarantee.
+# CLI: cn --config ./path/to/copied-config.yaml

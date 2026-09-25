@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-09-22",
+  "tools": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "license": "Proprietary terms",
+      "software_cost": "See terms and access requirements",
+      "model_cost": "Eligible paid account/API; alternative provider costs vary",
+      "free_tier": "No guaranteed free official Claude route",
+      "openrouter": "Provider-documented; Anthropic-model caveats",
+      "ollama": "Ollama-documented compatibility",
+      "local": true,
+      "labels": [
+        "PAID",
+        "PROVIDER COMPATIBILITY"
+      ],
+      "platforms": {
+        "windows": "Documented",
+        "linux": "Documented",
+        "macos": "Documented",
+        "android": "Community / unverified",
+        "cloud": "Supported Linux host"
+      },
+      "guide": "tools/claude-code.md",
+      "last_verified": "2026-09-22",
+      "verification": "source-reviewed; runtime coverage separately recorded",
+      "sources": [
+        "claude-setup",
+        "claude-auth",
+        "router-claude",
+        "ollama-claude"
+      ]
+    },
+    {
+      "id": "gemini-cli",
+      "name": "Gemini CLI",
+      "license": "Apache-2.0",
+      "software_cost": "No-charge open-source client/runtime",
+      "model_cost": "Retained API / enterprise access",
+      "free_tier": "Consumer route migrated; API tier eligibility is separate",
+      "openrouter": "Not established",
+      "ollama": "Not established",
+      "local": false,
+      "labels": [
+        "OPEN SOURCE",
+        "API / ENTERPRISE"
+      ],
+      "platforms": {
+        "windows": "Documented",
+        "linux": "Documented",
+        "macos": "Documented",
+        "android": "Community / unverified",
+        "cloud": "Supported Linux host"
+      },
+      "guide": "tools/gemini-cli.md",
+      "last_verified": "2026-09-22",
+      "verification": "source-reviewed; runtime coverage separately recorded",
+      "sources": [
+        "gemini-install",
+        "gemini-auth",
+        "gemini-transition"
+      ]
+    },
+    {
+      "id": "codex",
+      "name": "OpenAI Codex CLI",
+      "license": "Apache-2.0",
+      "software_cost": "No-charge open-source client/runtime",
+      "model_cost": "Eligible account, billed API, or local OSS mode",
+      "free_tier": "Account eligibility can change; no permanent promise",
+      "openrouter": "Provider-documented custom provider",
+      "ollama": "Official OSS mode",
+      "local": true,
+      "labels": [
+        "OPEN SOURCE",
+        "LOCAL",
+        "OPTIONAL PAID PROVIDER"
+      ],
+      "platforms": {
+        "windows": "Documented",
+        "linux": "Documented",
+        "macos": "Documented",
+        "android": "Community / unverified",
+        "cloud": "Supported Linux host"
+      },
+      "guide": "tools/codex.md",
+      "last_verified": "2026-09-22",
+      "verification": "source-reviewed; runtime coverage separately recorded",
+      "sources": [
+        "codex-install",
+        "codex-auth",
+        "codex-config",
+        "router-codex"
+      ]
+    },
+    {
+      "id": "aider",
+      "name": "Aider",
+      "license": "Apache-2.0",
+      "software_cost": "No-charge open-source client/runtime",
+      "model_cost": "Local or selected provider",
+      "free_tier": "Provider-dependent",
+      "openrouter": "Tool-documented",
+      "ollama": "Tool-documented",
+      "local": true,
+      "labels": [
+        "OPEN SOURCE",
+        "LOCAL",
+        "OPTIONAL PAID PROVIDER"
+      ],
+      "platforms": {
+        "windows": "Documented",
+        "linux": "Documented",
+        "macos": "Documented",
+        "android": "Community / unverified",
+        "cloud": "Supported Linux host"
+      },
+      "guide": "tools/aider.md",
+      "last_verified": "2026-09-22",
+      "verification": "source-reviewed; runtime coverage separately recorded",
+      "sources": [
+        "aider-install",
+        "aider-router",
+        "aider-ollama"
+      ]
+    },
+    {
+      "id": "opencode",
+      "name": "OpenCode",
+      "license": "MIT",
+      "software_cost": "No-charge open-source client/runtime",
+      "model_cost": "Local or selected provider",
+      "free_tier": "Provider-dependent",
+      "openrouter": "Built-in provider",
+      "ollama": "Documented local provider",
+      "local": true,
+      "labels": [
+        "OPEN SOURCE",
+        "LOCAL",
+        "OPTIONAL PAID PROVIDER"
+      ],
+      "platforms": {
+        "windows": "WSL recommended",
+        "linux": "Documented",
+        "macos": "Documented",
+        "android": "Community / unverified",
+        "cloud": "Supported Linux host"
+      },
+      "guide": "tools/opencode.md",
+      "last_verified": "2026-09-22",
+      "verification": "source-reviewed; runtime coverage separately recorded",
+      "sources": [
+        "opencode-install",
+        "opencode-providers"
+      ]
+    },
+    {
+      "id": "continue",
+      "name": "Continue CLI + IDE",
+      "license": "Apache-2.0",
+      "software_cost": "No-charge open-source client/runtime",
+      "model_cost": "Local or selected provider",
+      "free_tier": "Provider-dependent",
+      "openrouter": "Documented config; CLI/IDE differences",
+      "ollama": "Documented config; CLI/IDE differences",
+      "local": true,
+      "labels": [
+        "OPEN SOURCE",
+        "LOCAL",
+        "OPTIONAL PAID PROVIDER"
+      ],
+      "platforms": {
+        "windows": "Documented",
+        "linux": "Documented",
+        "macos": "Documented",
+        "android": "Community / unverified",
+        "cloud": "Supported Linux host"
+      },
+      "guide": "tools/continue.md",
+      "last_verified": "2026-09-22",
+      "verification": "source-reviewed; runtime coverage separately recorded",
+      "sources": [
+        "continue-install",
+        "continue-config",
+        "continue-ollama",
+        "continue-router"
+      ]
+    },
+    {
+      "id": "ollama",
+      "name": "Ollama",
+      "license": "MIT runtime; model licenses vary",
+      "software_cost": "No-charge open-source client/runtime",
+      "model_cost": "Local hardware or optional cloud services",
+      "free_tier": "Local inference has no API fee",
+      "openrouter": "Not a model-routing client",
+      "ollama": "Native model runner",
+      "local": true,
+      "labels": [
+        "OPEN SOURCE",
+        "LOCAL",
+        "OPTIONAL PAID PROVIDER"
+      ],
+      "platforms": {
+        "windows": "Documented",
+        "linux": "Documented",
+        "macos": "Documented",
+        "android": "Not established",
+        "cloud": "CPU host subject to resources"
+      },
+      "guide": "tools/ollama.md",
+      "last_verified": "2026-09-22",
+      "verification": "source-reviewed; runtime coverage separately recorded",
+      "sources": [
+        "ollama-windows",
+        "ollama-linux",
+        "ollama-macos",
+        "ollama-faq"
+      ]
+    },
+    {
+      "id": "openrouter",
+      "name": "OpenRouter",
+      "license": "Hosted service; client licenses vary",
+      "software_cost": "See terms and access requirements",
+      "model_cost": "Model-specific free or metered API",
+      "free_tier": "Catalog- and account-dependent; limited",
+      "openrouter": "Native service",
+      "ollama": "Not a local runner",
+      "local": false,
+      "labels": [
+        "FREE TIER",
+        "OPTIONAL PAID PROVIDER",
+        "REQUIRES API KEY"
+      ],
+      "platforms": {
+        "windows": "Via client",
+        "linux": "Via client",
+        "macos": "Via client",
+        "android": "Via client",
+        "cloud": "Via client"
+      },
+      "guide": "tools/openrouter.md",
+      "last_verified": "2026-09-22",
+      "verification": "source-reviewed; runtime coverage separately recorded",
+      "sources": [
+        "router-start",
+        "router-limits",
+        "router-models"
+      ]
+    },
+    {
+      "id": "antigravity",
+      "name": "Antigravity CLI",
+      "license": "Google terms; open-source license not established",
+      "software_cost": "See terms and access requirements",
+      "model_cost": "Account quota / optional paid use",
+      "free_tier": "Eligible account allowance; check plans",
+      "openrouter": "Not established",
+      "ollama": "Not established",
+      "local": false,
+      "labels": [
+        "FREE TIER",
+        "OPTIONAL PAID PROVIDER"
+      ],
+      "platforms": {
+        "windows": "Documented",
+        "linux": "Documented",
+        "macos": "Documented",
+        "android": "Not established",
+        "cloud": "Supported Linux host"
+      },
+      "guide": "tools/antigravity.md",
+      "last_verified": "2026-09-22",
+      "verification": "source-reviewed; runtime coverage separately recorded",
+      "sources": [
+        "antigravity-install",
+        "antigravity-plans",
+        "gemini-transition"
+      ]
+    }
+  ]
+}

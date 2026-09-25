@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security issue privately
+    url: https://github.com/Rohit-kumar-2674/termwise-atlas/security/policy
+    about: Revoke exposed keys first. Never publish credentials or sensitive logs in an issue.

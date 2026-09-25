@@ -1,0 +1,130 @@
+site_name: Termwise Atlas
+site_description: One open guide to AI coding from any terminal, on any device.
+site_url: https://rohit-kumar-2674.github.io/termwise-atlas/
+repo_url: https://github.com/Rohit-kumar-2674/termwise-atlas
+repo_name: Rohit-kumar-2674/termwise-atlas
+edit_uri: edit/main/docs/
+copyright: Independent community guide · MIT · Source review and runtime coverage are separate.
+strict: true
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+  font: false
+  palette:
+    - scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+    - content.action.edit
+plugins:
+  - search
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+extra_css:
+  - assets/atlas.css
+extra_javascript:
+  - assets/route-engine.js
+  - assets/atlas.js
+extra:
+  generator: false
+nav:
+  - Home: index.md
+  - Start:
+    - START HERE: getting-started/start-here.md
+    - Choose a setup: getting-started/choose.md
+    - Compatibility database: getting-started/comparison.md
+    - Terminal basics: getting-started/terminal-basics.md
+    - Free vs local vs paid: getting-started/costs.md
+    - How the ecosystem fits: getting-started/ecosystem.md
+    - Environment doctor: getting-started/diagnostics.md
+    - Better prompts: getting-started/prompting.md
+  - Platforms:
+    - Android first: platforms/android.md
+    - Android + Debian: platforms/android-debian.md
+    - Android + Ubuntu: platforms/android-ubuntu.md
+    - Windows: platforms/windows.md
+    - WSL Ubuntu: platforms/wsl.md
+    - Linux: platforms/linux.md
+    - macOS: platforms/macos.md
+    - ChromeOS: platforms/chromeos.md
+    - Google Cloud Shell: platforms/cloud-shell.md
+    - GitHub Codespaces: platforms/codespaces.md
+    - Remote SSH / VPS: platforms/remote-ssh.md
+  - Tools:
+    - Claude Code: tools/claude-code.md
+    - Gemini CLI: tools/gemini-cli.md
+    - OpenAI Codex: tools/codex.md
+    - Aider: tools/aider.md
+    - OpenCode: tools/opencode.md
+    - Continue: tools/continue.md
+    - Antigravity CLI: tools/antigravity.md
+    - Ollama: tools/ollama.md
+    - OpenRouter: tools/openrouter.md
+    - Other agents: tools/other-agents.md
+  - Providers:
+    - Ollama lab: providers/ollama.md
+    - OpenRouter: providers/openrouter.md
+    - Google access: providers/gemini.md
+    - Model selection: providers/local-models.md
+    - Model reference table: providers/model-table.md
+    - Hardware planning: providers/hardware.md
+    - Provider routing: providers/routing.md
+  - Practice:
+    - Learning labs: examples/index.md
+    - Build a website: examples/build-a-website.md
+    - Fix a bug: examples/fix-a-bug.md
+    - Generate tests: examples/generate-tests.md
+    - Refactor Python: examples/refactor-python.md
+    - React app: examples/react-app.md
+    - Analyze a repository: examples/analyze-repository.md
+    - Local Ollama: examples/local-ollama.md
+    - OpenRouter agent: examples/openrouter-agent.md
+    - Git + AI loop: git/workflow.md
+    - GitHub flow: git/github.md
+  - Help:
+    - Troubleshooting: troubleshooting/index.md
+    - Installation: troubleshooting/installation.md
+    - Authentication / API: troubleshooting/authentication.md
+    - Models / servers: troubleshooting/models.md
+    - Platforms / Git: troubleshooting/platforms.md
+    - FAQ: faq/index.md
+    - API key security: security/api-keys.md
+    - Agent safety: security/agent-safety.md
+    - Sandboxing: security/sandboxing.md
+  - Community:
+    - Maintenance: maintenance/index.md
+    - Development: maintenance/development.md
+    - Validation record: maintenance/validation.md
+    - Guide template: maintenance/guide-template.md
+    - Translations: maintenance/translations.md

@@ -1,0 +1,366 @@
+{
+  "verified_on": "2026-09-22",
+  "method": "Primary documentation review; not an execution certification",
+  "sources": [
+    {
+      "id": "claude-setup",
+      "title": "Claude Code installation",
+      "url": "https://code.claude.com/docs/en/setup"
+    },
+    {
+      "id": "claude-auth",
+      "title": "Claude Code authentication",
+      "url": "https://code.claude.com/docs/en/authentication"
+    },
+    {
+      "id": "claude-workflow",
+      "title": "Claude Code workflows",
+      "url": "https://code.claude.com/docs/en/common-workflows"
+    },
+    {
+      "id": "claude-permissions",
+      "title": "Claude Code permissions",
+      "url": "https://code.claude.com/docs/en/permissions"
+    },
+    {
+      "id": "claude-gateway",
+      "title": "Claude Code deployment and gateways",
+      "url": "https://code.claude.com/docs/en/third-party-integrations"
+    },
+    {
+      "id": "gemini-install",
+      "title": "Gemini CLI installation",
+      "url": "https://geminicli.com/docs/get-started/installation/"
+    },
+    {
+      "id": "gemini-auth",
+      "title": "Gemini CLI authentication",
+      "url": "https://geminicli.com/docs/get-started/authentication/"
+    },
+    {
+      "id": "gemini-quota",
+      "title": "Gemini CLI quota page (read with transition notice)",
+      "url": "https://geminicli.com/docs/resources/quota-and-pricing/"
+    },
+    {
+      "id": "gemini-transition",
+      "title": "Google consumer CLI transition announcement",
+      "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/"
+    },
+    {
+      "id": "gemini-commands",
+      "title": "Gemini CLI commands",
+      "url": "https://geminicli.com/docs/reference/commands/"
+    },
+    {
+      "id": "antigravity-plans",
+      "title": "Antigravity plans",
+      "url": "https://antigravity.google/docs/plans"
+    },
+    {
+      "id": "antigravity-migration",
+      "title": "Antigravity migration",
+      "url": "https://antigravity.google/docs/cli/gcli-migration"
+    },
+    {
+      "id": "antigravity-intro",
+      "title": "Antigravity CLI introduction",
+      "url": "https://antigravity.google/blog/introducing-google-antigravity-cli"
+    },
+    {
+      "id": "codex-install",
+      "title": "Official Codex CLI",
+      "url": "https://developers.openai.com/codex/cli"
+    },
+    {
+      "id": "codex-auth",
+      "title": "Codex authentication",
+      "url": "https://developers.openai.com/codex/auth"
+    },
+    {
+      "id": "codex-config",
+      "title": "Codex provider configuration and OSS mode",
+      "url": "https://developers.openai.com/codex/config-advanced"
+    },
+    {
+      "id": "codex-security",
+      "title": "Codex permissions and sandboxing",
+      "url": "https://learn.chatgpt.com/docs/agent-approvals-security"
+    },
+    {
+      "id": "aider-install",
+      "title": "Aider installation",
+      "url": "https://aider.chat/docs/install.html"
+    },
+    {
+      "id": "aider-router",
+      "title": "Aider OpenRouter provider",
+      "url": "https://aider.chat/docs/llms/openrouter.html"
+    },
+    {
+      "id": "aider-ollama",
+      "title": "Aider Ollama provider",
+      "url": "https://aider.chat/docs/llms/ollama.html"
+    },
+    {
+      "id": "aider-usage",
+      "title": "Aider usage",
+      "url": "https://aider.chat/docs/usage.html"
+    },
+    {
+      "id": "opencode-install",
+      "title": "OpenCode installation",
+      "url": "https://opencode.ai/docs/"
+    },
+    {
+      "id": "opencode-providers",
+      "title": "OpenCode providers",
+      "url": "https://opencode.ai/docs/providers/"
+    },
+    {
+      "id": "continue-install",
+      "title": "Continue CLI quickstart",
+      "url": "https://docs.continue.dev/cli/quickstart"
+    },
+    {
+      "id": "continue-config",
+      "title": "Continue CLI configuration",
+      "url": "https://docs.continue.dev/cli/configuration"
+    },
+    {
+      "id": "continue-ollama",
+      "title": "Continue Ollama integration",
+      "url": "https://docs.continue.dev/customize/model-providers/top-level/ollama"
+    },
+    {
+      "id": "continue-router",
+      "title": "Continue OpenRouter integration",
+      "url": "https://docs.continue.dev/customize/model-providers/top-level/openrouter"
+    },
+    {
+      "id": "continue-ide",
+      "title": "Continue IDE installation",
+      "url": "https://docs.continue.dev/ide-extensions/install"
+    },
+    {
+      "id": "ollama-cli",
+      "title": "Ollama CLI reference",
+      "url": "https://docs.ollama.com/cli"
+    },
+    {
+      "id": "ollama-linux",
+      "title": "Ollama Linux installation",
+      "url": "https://docs.ollama.com/linux"
+    },
+    {
+      "id": "ollama-macos",
+      "title": "Ollama macOS requirements",
+      "url": "https://docs.ollama.com/macos"
+    },
+    {
+      "id": "ollama-windows",
+      "title": "Ollama Windows requirements",
+      "url": "https://docs.ollama.com/windows"
+    },
+    {
+      "id": "ollama-faq",
+      "title": "Ollama FAQ and local-only configuration",
+      "url": "https://docs.ollama.com/faq"
+    },
+    {
+      "id": "ollama-gpu",
+      "title": "Ollama GPU support",
+      "url": "https://docs.ollama.com/gpu"
+    },
+    {
+      "id": "ollama-compatible",
+      "title": "Ollama API compatibility",
+      "url": "https://docs.ollama.com/api/openai-compatibility"
+    },
+    {
+      "id": "ollama-claude",
+      "title": "Ollama-documented Claude Code integration",
+      "url": "https://docs.ollama.com/integrations/claude-code"
+    },
+    {
+      "id": "router-start",
+      "title": "OpenRouter quickstart",
+      "url": "https://openrouter.ai/docs/quickstart"
+    },
+    {
+      "id": "router-limits",
+      "title": "OpenRouter rate limits",
+      "url": "https://openrouter.ai/docs/api/reference/limits"
+    },
+    {
+      "id": "router-models",
+      "title": "OpenRouter model catalog",
+      "url": "https://openrouter.ai/models"
+    },
+    {
+      "id": "router-claude",
+      "title": "OpenRouter-documented Claude Code integration",
+      "url": "https://openrouter.ai/docs/cookbook/coding-agents/claude-code-integration"
+    },
+    {
+      "id": "router-codex",
+      "title": "OpenRouter-documented Codex integration",
+      "url": "https://openrouter.ai/docs/cookbook/coding-agents/codex-cli"
+    },
+    {
+      "id": "router-opencode",
+      "title": "OpenRouter OpenCode integration",
+      "url": "https://openrouter.ai/docs/cookbook/coding-agents/opencode-integration"
+    },
+    {
+      "id": "termux",
+      "title": "Termux installation and limitations",
+      "url": "https://github.com/termux/termux-app"
+    },
+    {
+      "id": "proot",
+      "title": "PRoot-Distro upstream manual",
+      "url": "https://github.com/termux/proot-distro"
+    },
+    {
+      "id": "wsl",
+      "title": "Microsoft WSL installation",
+      "url": "https://learn.microsoft.com/en-us/windows/wsl/install"
+    },
+    {
+      "id": "chromeos",
+      "title": "ChromeOS Linux environment",
+      "url": "https://support.google.com/chromebook/answer/9145439"
+    },
+    {
+      "id": "cloud-preview",
+      "title": "Cloud Shell web preview",
+      "url": "https://docs.cloud.google.com/shell/docs/using-web-preview"
+    },
+    {
+      "id": "cloud-files",
+      "title": "Cloud Shell file transfer",
+      "url": "https://docs.cloud.google.com/shell/docs/uploading-and-downloading-files"
+    },
+    {
+      "id": "cloud-shell",
+      "title": "Cloud Shell environment",
+      "url": "https://docs.cloud.google.com/shell/docs/how-cloud-shell-works"
+    },
+    {
+      "id": "codespaces",
+      "title": "GitHub Codespaces overview",
+      "url": "https://docs.github.com/en/codespaces/about-codespaces/what-are-codespaces"
+    },
+    {
+      "id": "codespaces-cost",
+      "title": "Codespaces billing",
+      "url": "https://docs.github.com/en/billing/concepts/product-billing/github-codespaces"
+    },
+    {
+      "id": "git",
+      "title": "Git reference",
+      "url": "https://git-scm.com/docs"
+    },
+    {
+      "id": "github-flow",
+      "title": "GitHub flow",
+      "url": "https://docs.github.com/en/get-started/using-github/github-flow"
+    },
+    {
+      "id": "github-secrets",
+      "title": "GitHub Actions secrets",
+      "url": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions"
+    },
+    {
+      "id": "node",
+      "title": "Node.js official downloads",
+      "url": "https://nodejs.org/en/download"
+    },
+    {
+      "id": "python",
+      "title": "Python venv documentation",
+      "url": "https://docs.python.org/3/library/venv.html"
+    },
+    {
+      "id": "brew",
+      "title": "Homebrew installation",
+      "url": "https://docs.brew.sh/Installation"
+    },
+    {
+      "id": "pnpm",
+      "title": "pnpm installation",
+      "url": "https://pnpm.io/installation"
+    },
+    {
+      "id": "vite",
+      "title": "Vite getting started",
+      "url": "https://vite.dev/guide/"
+    },
+    {
+      "id": "mkdocs",
+      "title": "Material for MkDocs",
+      "url": "https://squidfunk.github.io/mkdocs-material/"
+    },
+    {
+      "id": "antigravity-install",
+      "title": "Antigravity installation and authentication",
+      "url": "https://antigravity.google/docs/cli/install/"
+    },
+    {
+      "id": "gemini-api-pricing",
+      "title": "Gemini API pricing",
+      "url": "https://ai.google.dev/gemini-api/docs/pricing"
+    },
+    {
+      "id": "codex-pricing",
+      "title": "Codex access and pricing",
+      "url": "https://learn.chatgpt.com/docs/pricing"
+    },
+    {
+      "id": "codex-repo",
+      "title": "codex upstream source and license",
+      "url": "https://github.com/openai/codex"
+    },
+    {
+      "id": "claude-code-repo",
+      "title": "claude-code upstream source and license",
+      "url": "https://github.com/anthropics/claude-code"
+    },
+    {
+      "id": "gemini-cli-repo",
+      "title": "gemini-cli upstream source and license",
+      "url": "https://github.com/google-gemini/gemini-cli"
+    },
+    {
+      "id": "aider-repo",
+      "title": "aider upstream source and license",
+      "url": "https://github.com/Aider-AI/aider"
+    },
+    {
+      "id": "opencode-repo",
+      "title": "opencode upstream source and license",
+      "url": "https://github.com/anomalyco/opencode"
+    },
+    {
+      "id": "continue-repo",
+      "title": "continue upstream source and license",
+      "url": "https://github.com/continuedev/continue"
+    },
+    {
+      "id": "ollama-repo",
+      "title": "ollama upstream source and license",
+      "url": "https://github.com/ollama/ollama"
+    },
+    {
+      "id": "github-leaks",
+      "title": "GitHub sensitive-data remediation",
+      "url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository"
+    },
+    {
+      "id": "docker-security",
+      "title": "Docker Engine security",
+      "url": "https://docs.docker.com/engine/security/"
+    }
+  ]
+}

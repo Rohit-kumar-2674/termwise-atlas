@@ -1,0 +1,11 @@
+# Merge into your own Codex config after reviewing current provider instructions.
+# PROVIDER-DOCUMENTED; not an OpenAI guarantee of model compatibility.
+model_provider = "openrouter"
+model = "PROVIDER/MODEL"
+
+[model_providers.openrouter]
+name = "OpenRouter"
+base_url = "https://openrouter.ai/api/v1"
+env_key = "OPENROUTER_API_KEY"
+# Current provider docs prefer command-based auth for model catalog discovery.
+# env_key may produce fallback model-metadata warnings. Review before use.

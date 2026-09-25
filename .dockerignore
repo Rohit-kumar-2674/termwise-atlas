@@ -1,0 +1,12 @@
+**
+!Dockerfile
+!requirements-docs.lock
+!mkdocs.yml
+!docs/
+!docs/**
+!data/
+!data/**
+!scripts/
+!scripts/render_data.py
+!overrides/
+!overrides/**

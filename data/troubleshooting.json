@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "issues": [
+    {
+      "id": "command-not-found",
+      "category": "installation",
+      "title": "Command not found",
+      "symptom": "The shell cannot locate the requested executable.",
+      "cause": "Install missing, old PATH, or wrong environment.",
+      "check": "Use `command -v TOOL` in Bash, `Get-Command TOOL` in PowerShell, or `where TOOL` in CMD, replacing TOOL.",
+      "fix": "Install from the tool page, reopen the shell, and check that the installer\u2019s executable directory is on your user PATH.",
+      "verify": "Run the tool\u2019s documented `--version` command in the same shell."
+    },
+    {
+      "id": "npm-eacces",
+      "category": "installation",
+      "title": "npm EACCES / permission denied",
+      "symptom": "A global npm install cannot write its target directory.",
+      "cause": "Node or the npm prefix belongs to another user.",
+      "check": "Check `npm config get prefix` and whether Node came from a system package or a user-owned installation.",
+      "fix": "Use a supported user-owned Node installation. Do not run `sudo npm` or recursively change system ownership.",
+      "verify": "Reopen the shell, check Node/npm versions, then retry the official package install."
+    },
+    {
+      "id": "python-managed",
+      "category": "installation",
+      "title": "Externally managed Python",
+      "symptom": "pip refuses to modify the system Python.",
+      "cause": "The OS manages that Python environment.",
+      "check": "Check `python3 --version` and which interpreter the command uses.",
+      "fix": "Create `python3 -m venv .venv` and use its Python explicitly. Install the distro\u2019s venv package if missing.",
+      "verify": "Run `.venv/bin/python -m pip --version`; Windows uses `.\\.venv\\Scripts\\python.exe -m pip --version`."
+    },
+    {
+      "id": "native-build",
+      "category": "installation",
+      "title": "Package build failed",
+      "symptom": "A dependency fails while compiling or has no matching wheel/binary.",
+      "cause": "Unsupported Python/Node major, architecture, libc, or missing compiler.",
+      "check": "Record OS, architecture, runtime versions, and the first meaningful compiler error; redact paths or values as needed.",
+      "fix": "Use the tool\u2019s supported runtime. Install documented build prerequisites, or move to a supported host when no Android binary exists.",
+      "verify": "Install cleanly and run the package\u2019s documented version check and a small task."
+    },
+    {
+      "id": "node-engine",
+      "category": "installation",
+      "title": "Unsupported Node engine",
+      "symptom": "npm reports that the selected package requires another Node version.",
+      "cause": "The installed runtime is outside the package\u2019s supported range.",
+      "check": "Run `node --version` and read the package\u2019s engines/installation requirements.",
+      "fix": "Install a supported current LTS from an official source. Do not treat `--force` as compatibility.",
+      "verify": "Run `node --version`, reinstall with the intended runtime, and launch the tool."
+    },
+    {
+      "id": "pnpm-missing",
+      "category": "installation",
+      "title": "pnpm / Corepack not found",
+      "symptom": "A tutorial assumes a command your Node installation did not provide.",
+      "cause": "Corepack bundling and package-manager installation differ by release.",
+      "check": "Run `node --version`, `npm --version`, and `command -v pnpm` in Bash.",
+      "fix": "Follow pnpm\u2019s current official installation method; do not assume Corepack is bundled.",
+      "verify": "Run `pnpm --version` and the project\u2019s lockfile-preserving install command."
+    },
+    {
+      "id": "powershell-policy",
+      "category": "installation",
+      "title": "PowerShell blocks npm.ps1",
+      "symptom": "PowerShell refuses to execute the npm wrapper script.",
+      "cause": "Execution policy blocks the `.ps1` shim.",
+      "check": "Check whether `npm.cmd --version` works in the same terminal.",
+      "fix": "Use `npm.cmd` or the official tool\u2019s native binary. Avoid changing machine-wide execution policy for this issue.",
+      "verify": "Run the intended npm command using `npm.cmd` and verify the installed tool."
+    },
+    {
+      "id": "wrong-package",
+      "category": "installation",
+      "title": "A similarly named program launches",
+      "symptom": "The executable has unexpected help text or behavior.",
+      "cause": "An unrelated package or earlier PATH entry shadows the intended tool.",
+      "check": "Inspect its version and command location; compare the package publisher and repository with the tool page.",
+      "fix": "Remove only the identified incorrect package using its package manager, then install the official package.",
+      "verify": "Check the publisher, executable path, and version before authenticating."
+    },
+    {
+      "id": "invalid-key",
+      "category": "authentication",
+      "title": "401 / invalid API key",
+      "symptom": "Provider rejects authentication.",
+      "cause": "Wrong provider key, expired/revoked key, missing environment, or wrong auth route.",
+      "check": "Check only whether the expected variable is configured using the doctor; review the endpoint and selected provider.",
+      "fix": "Load a valid key through a hidden prompt or documented auth flow. Remove accidental whitespace. Never print the value for debugging.",
+      "verify": "Run one small authorized request and check account usage."
+    },
+    {
+      "id": "forbidden",
+      "category": "authentication",
+      "title": "403 / access denied",
+      "symptom": "Authentication may succeed but access is refused.",
+      "cause": "Model, organization, region, policy, or account entitlement does not allow this request.",
+      "check": "Read the redacted provider error and confirm the official account/project/model requirements.",
+      "fix": "Choose a route your account legitimately supports or contact provider support. Do not bypass policy or region restrictions.",
+      "verify": "Retry only after the entitlement/configuration issue is resolved."
+    },
+    {
+      "id": "rate-limit",
+      "category": "authentication",
+      "title": "429 / too many requests",
+      "symptom": "Provider rejects requests for rate or quota reasons.",
+      "cause": "Per-minute limit, exhausted allowance, or upstream capacity.",
+      "check": "Inspect retry guidance, account usage, selected free variant, and concurrent agent sessions.",
+      "fix": "Wait as instructed, reduce concurrency/context where relevant, or deliberately choose an available authorized route. Do not rotate accounts to evade limits.",
+      "verify": "One small request succeeds without a retry storm; usage stays within the intended budget."
+    },
+    {
+      "id": "billing",
+      "category": "authentication",
+      "title": "Unexpected model charges",
+      "symptom": "A task consumes paid usage despite a free-software label.",
+      "cause": "CLI license was confused with model pricing, fallback selected a paid route, or retries expanded usage.",
+      "check": "Stop the agent and inspect account usage, exact model ID, routing/fallback, and API-vs-subscription billing.",
+      "fix": "Set supported budget controls, select the intended route, and revoke an exposed key if usage is unauthorized.",
+      "verify": "Run a small deliberate task and compare usage to expected pricing."
+    },
+    {
+      "id": "gemini-transition",
+      "category": "authentication",
+      "title": "Old Gemini consumer login stopped working",
+      "symptom": "A formerly working personal Gemini CLI sign-in no longer grants requests.",
+      "cause": "Google announced a consumer transition to Antigravity CLI in June 2026.",
+      "check": "Check authentication type, tool version, and the official transition notice linked in the Gemini guide.",
+      "fix": "Follow the documented migration or an eligible API/enterprise route. Do not assume old free-quota screenshots apply.",
+      "verify": "Confirm the selected product/account route and its current allowance in a new small session."
+    },
+    {
+      "id": "wrong-environment",
+      "category": "authentication",
+      "title": "Configured key is not visible to the CLI",
+      "symptom": "A key exists in one shell or file but the program cannot see it.",
+      "cause": "Different process, OS userland, GUI launch environment, or a client that does not load `.env`.",
+      "check": "Check the client\u2019s loading rules and presence-only doctor in the same launch environment.",
+      "fix": "Load the variable into that process using the documented mechanism; restart the client when required.",
+      "verify": "Check configured/not-configured status without displaying the key, then authenticate."
+    },
+    {
+      "id": "key-exposed",
+      "category": "authentication",
+      "title": "Key appeared in Git or a screenshot",
+      "symptom": "A real credential was published or shared.",
+      "cause": "Secret was included in tracked content, logs, command history, or an image.",
+      "check": "Identify the affected provider and key using non-secret metadata; do not repost the secret.",
+      "fix": "Revoke/rotate immediately, review usage, replace legitimate secret stores, and follow the API-key incident guide.",
+      "verify": "The old credential is invalid; new secrets are scoped and absent from tracked files/history remediation targets."
+    },
+    {
+      "id": "model-not-found",
+      "category": "models",
+      "title": "Model not found",
+      "symptom": "The provider cannot resolve the requested model.",
+      "cause": "Wrong ID/tag, missing local download, wrong provider prefix, or model removal.",
+      "check": "Use `ollama list` locally or inspect the provider\u2019s current model catalog; compare exact identifiers.",
+      "fix": "Pull the intended local tag or select an available remote ID. Aider provider prefixes are part of its syntax.",
+      "verify": "A small inference request succeeds with the displayed intended model."
+    },
+    {
+      "id": "ollama-refused",
+      "category": "models",
+      "title": "Connection refused on 11434",
+      "symptom": "Client cannot reach the Ollama server.",
+      "cause": "Server stopped, wrong machine/port, broken SSH tunnel, or incorrect base URL.",
+      "check": "Check the host running the server and `ollama list`; inspect the documented service status or manual server terminal.",
+      "fix": "Start the official service or one manual `ollama serve` instance; correct the endpoint/tunnel. Do not expose a public unauthenticated port.",
+      "verify": "`ollama list` and a tiny local request work from the intended client."
+    },
+    {
+      "id": "port-in-use",
+      "category": "models",
+      "title": "Address already in use",
+      "symptom": "A service cannot bind its requested port.",
+      "cause": "Another process already owns the port, often the existing Ollama app.",
+      "check": "Inspect running applications and the current server; on supported Linux use `ss -ltn` for listening TCP ports.",
+      "fix": "Use the existing intended server or stop only the identified conflicting process. Choose a different preview port if appropriate.",
+      "verify": "Exactly one intended service answers on the chosen port."
+    },
+    {
+      "id": "oom",
+      "category": "models",
+      "title": "Out of memory / process killed",
+      "symptom": "Inference or build fails during loading or long context.",
+      "cause": "Weights, KV cache, concurrency, OS, and other apps exceed memory.",
+      "check": "Check available RAM/VRAM, loaded models via `ollama ps`, context settings, and other applications.",
+      "fix": "Use a smaller/stronger quantization where appropriate, shorter context, and one request; move heavy work to suitable hardware.",
+      "verify": "Complete a representative small task without swapping excessively or being killed."
+    },
+    {
+      "id": "gpu-unused",
+      "category": "models",
+      "title": "CUDA / GPU unavailable",
+      "symptom": "Model runs on CPU or the GPU backend fails.",
+      "cause": "Unsupported hardware, mismatched driver/runtime, unavailable device passthrough, or insufficient VRAM.",
+      "check": "Compare exact hardware/driver/OS with Ollama\u2019s current GPU documentation; inspect `ollama ps` processor allocation.",
+      "fix": "Follow vendor-supported driver guidance. WSL and containers need their own device support; Android PRoot is not desktop CUDA.",
+      "verify": "A known small model reports the intended processor allocation; otherwise use an honest CPU route."
+    },
+    {
+      "id": "tool-calls",
+      "category": "models",
+      "title": "Malformed tool calls or broken edits",
+      "symptom": "Chat works but the agent cannot perform reliable actions.",
+      "cause": "Model lacks required tool/edit format, context is too small, or protocol compatibility is partial.",
+      "check": "Check agent/provider/model tool support and inspect a minimal non-sensitive task.",
+      "fix": "Use a documented tool-capable model or a client with a suitable text-editing mode. Keep permissions intact.",
+      "verify": "The small task completes with valid actions and independently passing tests."
+    },
+    {
+      "id": "context-limit",
+      "category": "models",
+      "title": "Context window exceeded",
+      "symptom": "Request exceeds token or local memory limits.",
+      "cause": "Too many files, long history, verbose tool output, or reserved output budget.",
+      "check": "Inspect selected files and the exact model/runtime context settings.",
+      "fix": "Start a focused session, select fewer files, summarize relevant history, and keep output budget. Increasing context also costs memory/tokens.",
+      "verify": "A focused task completes without truncating essential requirements."
+    },
+    {
+      "id": "termux-storage",
+      "category": "platforms",
+      "title": "Termux storage permission / symlink failure",
+      "symptom": "Packages or executables fail under shared phone storage.",
+      "cause": "Shared storage is not a normal executable Unix filesystem.",
+      "check": "Run `pwd` and check whether the repository is under `/sdcard` or a storage shortcut.",
+      "fix": "Clone into `~/projects`; use `termux-setup-storage` only when exporting/importing user files.",
+      "verify": "Install dependencies and run a small script from Termux internal storage."
+    },
+    {
+      "id": "architecture",
+      "category": "platforms",
+      "title": "Illegal instruction / unsupported architecture",
+      "symptom": "A native program crashes or cannot execute.",
+      "cause": "Binary targets the wrong CPU, libc, OS ABI, or unsupported instruction set.",
+      "check": "Record `uname -m`, runtime version, native Termux versus PRoot, and the first error.",
+      "fix": "Use a matching upstream-supported build; choose SSH/browser development if none exists. Do not rename binaries or trust random patched packages.",
+      "verify": "Version check and a small task run in the intended environment."
+    },
+    {
+      "id": "preview",
+      "category": "platforms",
+      "title": "Browser says localhost refused connection",
+      "symptom": "Browser cannot reach the development server.",
+      "cause": "Server stopped, wrong port, phone background suspension, or server is actually remote.",
+      "check": "Check the running terminal, printed port, and which machine hosts the server.",
+      "fix": "Restart the server; use local loopback on-device, authenticated cloud preview, or an SSH tunnel for a remote host.",
+      "verify": "Open the correct URL while the server/tunnel remains running."
+    },
+    {
+      "id": "wsl-path",
+      "category": "platforms",
+      "title": "WSL tools or file watchers behave strangely",
+      "symptom": "Windows and Linux packages/files conflict or builds are slow.",
+      "cause": "Mixed PATH/runtime or project dependencies shared across filesystems.",
+      "check": "Run `pwd`, `command -v node`, and check WSL version from PowerShell.",
+      "fix": "Keep Linux clones in `~/projects`, install Linux dependencies in WSL, and use supported WSL 2 where needed.",
+      "verify": "The correct Linux executable runs and the project builds in its own environment."
+    },
+    {
+      "id": "mac-permissions",
+      "category": "platforms",
+      "title": "macOS blocks application or folder access",
+      "symptom": "Gatekeeper or privacy controls prevent launch/file access.",
+      "cause": "Unverified publisher or missing narrowly scoped file permission.",
+      "check": "Check the official installer source and exact macOS dialog.",
+      "fix": "Follow vendor/Apple instructions for the specific app and folder. Do not disable Gatekeeper globally or grant Full Disk Access by default.",
+      "verify": "The verified app opens the intended project without unnecessary permissions."
+    },
+    {
+      "id": "cloud-session",
+      "category": "platforms",
+      "title": "Cloud Shell loses installed packages",
+      "symptom": "A new session lacks a previous system installation.",
+      "cause": "The VM environment is ephemeral while supported home storage is persistent.",
+      "check": "Check `pwd`, tool version, and whether files lived in the persistent home area.",
+      "fix": "Keep source in Git, use documented user-level installs, and record reproducible setup instructions.",
+      "verify": "A fresh session can restore tooling and the pushed repository."
+    },
+    {
+      "id": "git-conflict",
+      "category": "platforms",
+      "title": "Git reports merge conflicts",
+      "symptom": "Local and incoming edits overlap.",
+      "cause": "Branches changed the same part of a file.",
+      "check": "Run `git status` and inspect both sides of each conflict.",
+      "fix": "Resolve the intended content, stage specific files, run tests, and complete the merge. Avoid force push as a generic repair.",
+      "verify": "No conflict markers remain; tests pass; the staged diff contains the intended combined behavior."
+    }
+  ]
+}

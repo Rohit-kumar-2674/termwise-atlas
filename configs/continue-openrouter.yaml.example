@@ -1,0 +1,9 @@
+name: Termwise provider learning
+version: 1.0.0
+schema: v1
+models:
+  - name: Selected OpenRouter model
+    provider: openrouter
+    model: PROVIDER/MODEL
+    apiKey: ${{ secrets.OPENROUTER_API_KEY }}
+# Replace the model ID. Set the secret in the documented client environment.

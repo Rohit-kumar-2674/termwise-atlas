@@ -42,6 +42,8 @@ Only enable probing in an environment whose installed executables you trust. Pre
 
 Optional programs can be absent; a missing Docker installation is not a failure if you aren't using containers. The report checks Git, Python, Node, npm, pnpm, Docker, Ollama, and the principal agents. “Available” means found on PATH, not integration-tested. Use the selected tool's own authentication status and a small approved task to verify provider access separately.
 
+On Windows, architecture describes the running Python build. An x64 Python running through emulation on an ARM device therefore reports `AMD64`; it does not certify the underlying hardware or GPU. This lookup does not launch a shell command.
+
 Check requirements explicitly in automation:
 
 ```bash

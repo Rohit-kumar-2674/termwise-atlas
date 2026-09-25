@@ -20,7 +20,7 @@ sources:
 
 **Source review:** installation/authentication/platform/license/provider claims were compared with primary documentation beginning 2026-09-22. Guides record observed releases where available. This does not certify an installation on every supported OS.
 
-**Repository checks:** automated checks exercise this project's own scripts, generated data, examples, links, and documentation website. The initial-release results below were recorded on 2026-09-23.
+**Repository checks:** automated checks exercise this project's own scripts, generated data, examples, links, and documentation website. The initial local results below were recorded on 2026-09-23; the utility tests were rechecked on 2026-09-25 after correcting the Windows architecture lookup.
 
 ## Runtime scope
 
@@ -28,7 +28,7 @@ The local build environment is Linux with Python 3.12.14 and Node 24.19.0.
 
 | Check | Observed result |
 | --- | --- |
-| Python utility/security/route tests | 12 passed |
+| Python utility/security/route tests | 13 passed, including the Windows lookup regression |
 | Python example contract tests | 6 passed; separate buggy fixture reproduces its intended boundary failure |
 | Browser/Python chooser parity | All 120 device/goal/memory combinations agree; invalid inputs rejected |
 | React logic tests and production build | 2 tests passed; Vite production build passed |

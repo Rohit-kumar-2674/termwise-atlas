@@ -44,7 +44,17 @@ Browser tests used Playwright 1.58.2 and an available Chromium 153 binary after 
 
  Upstream model requests, paid authentication flows, native Android/PRoot hardware, and local GPU inference are not exercised by the automated repository checks.
 
-The GitHub workflow defines Windows/Linux/macOS Python checks and a Docker smoke test. A workflow definition alone is not a successful run. Consult the repository's Actions page for the result attached to the published commit.
+## Published CI evidence
+
+[Verify run 36141620818](https://github.com/Rohit-kumar-2674/termwise-atlas/actions/runs/36141620818) passed all eight jobs on 2026-09-25 for commit `0c00e420a555e4a4545d5246bf467dec9b9f6840`:
+
+- Windows, Ubuntu, and macOS each ran the 13 utility tests and 6 Python example tests with Python 3.11 and 3.13, plus the doctor and noninteractive wizard commands.
+- The content/site job passed lint, schema/link/configuration validation, the strict documentation build, chooser parity, React tests/build, and all five browser checks using Playwright's downloaded Chromium.
+- The Docker job built the image and fetched the expected homepage from the non-root container with a read-only filesystem, all Linux capabilities dropped, and privilege escalation disabled.
+
+The first CI attempt revealed a Windows Python 3.11 architecture lookup that could execute a subprocess and a Docker readiness check that did not retry startup connection resets. Both were fixed before the successful run. Future changes should consult the Actions result for their own commit; this record does not certify later revisions automatically.
+
+GitHub Pages activation is pending. The published repository includes a working static-site build and deployment workflow, but the hosted site is not claimed as live until deployment is verified.
 
 ## Honest interpretation
 

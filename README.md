@@ -88,7 +88,7 @@ Search, dark/light mode, copy buttons, platform tabs, a keyboard-accessible setu
 
 ![Termwise Atlas documentation homepage on desktop](assets/screenshots/desktop-home.png)
 
-[Mobile screenshot](assets/screenshots/mobile-home.png) · [Documentation website](https://rohit-kumar-2674.github.io/termwise-atlas/)
+[Mobile screenshot](assets/screenshots/mobile-home.png) · [Build the documentation website](docs/maintenance/development.md)
 
 ## Architecture
 

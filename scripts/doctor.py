@@ -5,11 +5,11 @@ from __future__ import annotations
 import argparse
 import json
 import os
-import platform
 import re
 import shutil
 import subprocess
 import sys
+import sysconfig
 from collections.abc import Mapping
 
 TOOLS = {
@@ -20,6 +20,16 @@ TOOLS = {
 }
 KEYS = ('OPENROUTER_API_KEY', 'GEMINI_API_KEY', 'OPENAI_API_KEY', 'ANTHROPIC_API_KEY')
 VERSION = re.compile(r'(?<![\w.])v?(\d{1,4}\.\d{1,4}(?:\.\d{1,4})?(?:-[a-zA-Z0-9.]+)?)(?![\w.])')
+
+
+def architecture() -> str:
+    """Read architecture without platform.machine()'s Windows shell fallback."""
+    if sys.platform == 'win32':
+        # The Python build tag identifies the running interpreter, including
+        # when an x86/x64 Python is emulated on a different Windows CPU.
+        return {'win32': 'x86', 'win-amd64': 'AMD64', 'win-arm64': 'ARM64'}.get(
+            sysconfig.get_platform(), 'unknown')
+    return os.uname().machine if hasattr(os, 'uname') else 'unknown'
 
 
 def safe_version(executable: str, environment: Mapping[str, str]) -> str:
@@ -49,11 +59,11 @@ def report(probe: bool = False) -> dict:
         path = sys.executable if command is None else shutil.which(command)
         entry = {'name': name, 'available': bool(path)}
         if command is None:
-            entry['version'] = platform.python_version()
+            entry['version'] = '.'.join(map(str, sys.version_info[:3]))
         elif probe and path:
             entry['version'] = safe_version(path, os.environ)
         tools.append(entry)
-    return {'schema_version': 1, 'os': sys.platform, 'architecture': platform.machine(),
+    return {'schema_version': 1, 'os': sys.platform, 'architecture': architecture(),
             'mode': 'version probes' if probe else 'presence only', 'tools': tools,
             'keys': {key: bool(os.environ.get(key, '').strip()) for key in KEYS},
             'note': 'Availability is not authentication or integration validation. No values or paths are reported.'}

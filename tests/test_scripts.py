@@ -18,12 +18,21 @@ import wizard
 class DoctorTests(unittest.TestCase):
     def test_default_does_not_execute_programs_or_reveal_secrets(self):
         secret = 'private-canary-do-not-display-938271'
-        with patch.dict(os.environ, {key: secret for key in doctor.KEYS}), patch('doctor.subprocess.run') as run:
+        with patch.dict(os.environ, {key: secret for key in doctor.KEYS}), \
+                patch('doctor.subprocess.Popen', side_effect=AssertionError('Presence checks must not execute commands')) as run:
             output = json.dumps(doctor.report())
         run.assert_not_called()
         self.assertNotIn(secret, output)
         self.assertNotIn(str(Path.home()), output)
         self.assertTrue(all(json.loads(output)['keys'].values()))
+
+    def test_windows_architecture_does_not_execute_commands(self):
+        with patch('doctor.sys.platform', 'win32'), \
+                patch('doctor.subprocess.Popen', side_effect=AssertionError('Architecture must not execute commands')):
+            for tag, expected in [('win32', 'x86'), ('win-amd64', 'AMD64'),
+                                  ('win-arm64', 'ARM64'), ('unrecognized', 'unknown')]:
+                with self.subTest(tag=tag), patch('doctor.sysconfig.get_platform', return_value=tag):
+                    self.assertEqual(doctor.architecture(), expected)
 
     def test_whitespace_key_is_not_configured(self):
         with patch.dict(os.environ, {'OPENROUTER_API_KEY': '   '}):

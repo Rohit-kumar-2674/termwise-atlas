@@ -73,6 +73,13 @@ jobs:
       - run: docker compose config --quiet
       - run: docker build -t termwise-atlas:test .
       - run: docker run -d --name atlas --read-only --cap-drop ALL --security-opt no-new-privileges --publish 127.0.0.1:8080:8000 termwise-atlas:test
-      - run: curl --fail --retry 8 --retry-connrefused --retry-delay 1 http://127.0.0.1:8080/
+      - name: Wait for the preview to serve its homepage
+        # Docker can reset a forwarded connection before Python starts listening.
+        run: |
+          curl --fail --silent --show-error --retry 8 --retry-all-errors --retry-delay 1 --max-time 5 --retry-max-time 30 http://127.0.0.1:8080/ --output /tmp/atlas-preview.html
+          python -c "from pathlib import Path; assert 'Termwise Atlas' in Path('/tmp/atlas-preview.html').read_text()"
+      - name: Show container logs on failure
+        if: failure()
+        run: docker logs atlas
       - run: docker rm -f atlas
         if: always()

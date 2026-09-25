@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0 — 2026-09-23
+## 0.1.0 — 2026-09-25
 
 Initial public learning hub: platform and tool guides, provider/model references, security and Git workflows, troubleshooting, eight runnable learning labs, read-only diagnostics, an instruction-only setup wizard, a searchable documentation site, and automated project checks.
 

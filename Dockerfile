@@ -1,4 +1,4 @@
-FROM python:3.12-slim AS build
+FROM python:3.14-slim AS build
 WORKDIR /guide
 COPY requirements-docs.lock .
 RUN pip install --no-cache-dir -r requirements-docs.lock
@@ -9,7 +9,7 @@ COPY data data
 COPY scripts/render_data.py scripts/render_data.py
 RUN python scripts/render_data.py && python -m mkdocs build --strict
 
-FROM python:3.12-slim
+FROM python:3.14-slim
 WORKDIR /site
 COPY --from=build /guide/site /site
 USER 65532:65532

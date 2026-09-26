@@ -11,7 +11,7 @@
 
 **Termwise Atlas** is a practical, independent learning hub for AI coding assistants. Learn the terminal, choose a legitimate model provider, make a small change, review the diff, and ship it with tests. Start on a phone; grow into a workstation.
 
-**[START HERE](docs/getting-started/start-here.md)** · **[Choose a setup](docs/getting-started/choose.md)** · **[Compatibility matrix](docs/getting-started/comparison.md)** · **[Android first](docs/platforms/android.md)** · **[Troubleshooting](docs/troubleshooting/index.md)**
+**[Live documentation](https://rohit-kumar-2674.github.io/termwise-atlas/)** · **[START HERE](docs/getting-started/start-here.md)** · **[Choose a setup](docs/getting-started/choose.md)** · **[Compatibility matrix](docs/getting-started/comparison.md)** · **[Android first](docs/platforms/android.md)** · **[Troubleshooting](docs/troubleshooting/index.md)**
 
 > **Current Google transition:** Google's consumer Gemini CLI sign-in routes were scheduled to move to Antigravity CLI on June 18, 2026. The Gemini guide covers the remaining documented API/enterprise routes and links to the current [migration path](docs/tools/antigravity.md). Old quota screenshots are not an entitlement.
 
@@ -88,7 +88,7 @@ Search, dark/light mode, copy buttons, platform tabs, a keyboard-accessible setu
 
 ![Termwise Atlas documentation homepage on desktop](assets/screenshots/desktop-home.png)
 
-[Mobile screenshot](assets/screenshots/mobile-home.png) · [Build the documentation website](docs/maintenance/development.md)
+[Live website](https://rohit-kumar-2674.github.io/termwise-atlas/) · [Mobile screenshot](assets/screenshots/mobile-home.png) · [Deployment preview](assets/screenshots/live-site-20260926.jpg) · [Build the documentation website](docs/maintenance/development.md)
 
 ## Architecture
 

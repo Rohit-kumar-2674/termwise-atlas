@@ -54,7 +54,7 @@ Browser tests used Playwright 1.58.2 and an available Chromium 153 binary after 
 
 The first CI attempt revealed a Windows Python 3.11 architecture lookup that could execute a subprocess and a Docker readiness check that did not retry startup connection resets. Both were fixed before the successful run. Future changes should consult the Actions result for their own commit; this record does not certify later revisions automatically.
 
-GitHub Pages activation is pending. The published repository includes a working static-site build and deployment workflow, but the hosted site is not claimed as live until deployment is verified.
+GitHub Pages was activated with GitHub Actions as its publishing source on 2026-09-26. [Publish documentation run 36142142196](https://github.com/Rohit-kumar-2674/termwise-atlas/actions/runs/36142142196), attempt 2, completed both build and deployment successfully. The [live documentation](https://rohit-kumar-2674.github.io/termwise-atlas/) was opened in a browser: the homepage and setup chooser loaded, search returned results, and navigation to the Android guide worked. HTTPS is enforced on the default GitHub Pages domain. This is a deployment smoke check, separate from the automated browser test coverage above.
 
 ## Honest interpretation
 
